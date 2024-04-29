@@ -2,10 +2,9 @@
 
 This GitHub page is for me sharing tips, tricks, techniques, experiments and links related to Draw Things.
 
-# Special Thanks
+# Credits
 
-Draw Things Author: @liuliu
-Draw Things API Author: @Gooster
-
-Draw Things website:
-https://drawthings.ai/
+Draw Things website:  
+https://drawthings.ai/  
+Draw Things author: @liuliu  
+Draw Things API author: @Gooster
