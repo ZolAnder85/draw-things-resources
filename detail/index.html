@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Draw Things Resources – Detail Transfer</title>
+	<link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+	<article>
+		<h2>
+			Detail Transfer with Pixelmator Pro
+		</h2>
+		<p>
+			Assume you have two images. For demonstartion, I will use these images:
+		</p>
+		<div class="center">
+			<img src="images/Primary.png" srcset="images/Primary.png 2x" />
+			<img src="images/Secondary.png" srcset="images/Secondary.png 2x" />
+		</div>
+		<p>
+			You can move the small details of the secondary image onto the primary with the following steps in Pixelmator Pro:
+		</p>
+		<ul>
+			<li>Open the primary in Pixelmator Pro</li>
+			<li>Change color depth to 16 bits</li>
+			<li>Scale it to the size of the secondary</li>
+			<li>Drag the secondary image to the top of the layer list</li>
+			<li>Duplicate the primary image</li>
+			<li>Add an effects layer to the top</li>
+		</ul>
+		<p>
+			Now your layers should look like this:
+		</p>
+		<img src="images/Layers-Initial.png" srcset="images/Layers-Initial.png 2x" />
+		<p>
+			Follow up with these steps:
+		</p>
+		<ul>
+			<li>Apply preset A to the bottom layer</li>
+			<li>Apply preset B to the seconds layer (from bottom)</li>
+			<li>Apply preset B to the third layer (from bottom)</li>
+			<li>Apply preset C to the effects layer</li>
+			<li>Set blending mode of the second layer to subtract</li>
+			<li>Set blending mode of the third layer to linear dodge</li>
+		</ul>
+		<p>
+			Preset A:
+		</p>
+		<img src="images/Preset-A.png" srcset="images/Preset-A.png 2x" />
+		<p>
+			Preset B:
+		</p>
+		<img src="images/Preset-B.png" srcset="images/Preset-B.png 2x" />
+		<p>
+			Preset C:
+		</p>
+		<img src="images/Preset-C.png" srcset="images/Preset-C.png 2x" />
+		<p>
+			Now your layers should look like this:
+		</p>
+		<img src="images/Layers-Final.png" srcset="images/Layers-Final.png 2x" />
+		<p>
+			You can change the size of the targeted detail level with the Radius parameter of the High Pass effects.
+		</p>
+		<p>
+			This is the resulting image with Radius 3 and 10:
+		</p>
+		<div class="center">
+			<img src="images/Result-Radius-3.png" srcset="images/Result-Radius-3.png 2x" />
+			<img src="images/Result-Radius-8.png" srcset="images/Result-Radius-8.png 2x" />
+		</div>
+		<p>
+			Optionally add the secondary again with blending mode set to luminosity.
+			Tweak opacity to your liking.
+			Correcting only colors can be done this way.
+		</p>
+		<p>
+			This is the resulting image with correcting only colors:
+		</p>
+		<div class="center">
+			<img src="images/Result-Color-Only.png" srcset="images/Result-Color-Only.png 2x" />
+		</div>
+		</article>
+</body>
+</html>
