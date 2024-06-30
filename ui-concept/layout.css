@@ -1,0 +1,201 @@
+:root {
+	--menu-width: 150px;
+	--options-width: 300px;
+	--content-width: 300px;
+	--manager-width: 600px;
+	--prompts-height: 300px;
+	--canvas-height: 300px;
+	--extra-width: 200px;
+	--label-width: 80px;
+	--input-width: 50px;
+}
+
+/* main */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: row;
+}
+
+.menu,
+.options,
+.content,
+.manager,
+.prompts,
+.result,
+.extra {
+	display: flex;
+	flex-direction: column;
+}
+
+.menu,
+.options,
+.manager,
+.prompts,
+.result,
+.extra {
+	gap: 10px;
+	padding: 10px;
+	padding-bottom: 15px;
+}
+
+.menu {
+	flex-shrink: 0;
+	width: var(--menu-width);
+	overflow-y: auto;
+}
+
+.options {
+	flex-grow: 0.2;
+	flex-shrink: 0;
+	width: var(--options-width);
+	overflow-y: auto;
+}
+
+.content {
+	flex-grow: 1;
+	width: var(--content-width);
+}
+
+.manager {
+	flex-grow: 1;
+	width: var(--manager-width);
+}
+
+.prompts {
+	height: var(--prompts-height);
+}
+
+.result {
+	flex-grow: 1;
+	height: var(--canvas-height);
+}
+
+.extra {
+	flex-grow: 0.2;
+	flex-shrink: 0;
+	width: var(--extra-width);
+	overflow-y: auto;
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	gap: 10px;
+	padding: 10px;
+}
+
+.row,
+.uniform {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+/* collapsing */
+
+.collapsed > :nth-child(n + 2) {
+	display: none;
+}
+
+/* inputs */
+
+h2 span {
+	float: right;
+}
+
+.row > label {
+	width: var(--label-width);
+}
+
+.row > input,
+.row > select {
+	width: var(--input-width);
+}
+
+.row > :nth-child(2) {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.row > :nth-child(1):nth-last-child(1) {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
+.uniform > * {
+	flex-grow: 1;
+}
+
+label,
+input,
+select,
+button {
+	white-space: pre;
+}
+
+input[type=range] {
+	overflow: initial;
+}
+
+button.main {
+	padding: 10px;
+}
+
+/* other */
+
+.pair {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	height: 100%;
+}
+
+.pair > textarea {
+	white-space: wrap;
+	flex-grow: 1;
+	height: 100%;
+}
+
+.history {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-shrink: 0;
+	gap: 10px;
+}
+
+.history > h2 {
+	width: 100%;
+}
+
+.history > div {
+	flex-grow: 1;
+	width: 100px;
+	aspect-ratio: 1;
+	padding: 10px;
+}

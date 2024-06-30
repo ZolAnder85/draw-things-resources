@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Draw Thing UI Proposal</title>
+	<link rel="stylesheet" href="../layout.css" />
+	<link rel="stylesheet" href="../theme.css" />
+</head>
+<body>
+	<instance template="template-menu"></instance>
+	<div class="options">
+		<h2>Parameters<span>...</span></h2>
+		<instance template="template-group-standard" id="model" header="Model"></instance>
+		<div id="loras" collapsible class="group">
+			<h2>LoRAs<span>+<span></h2>
+			<instance template="template-group-minus" id="lora-1" header="LoRA 1"></instance>
+			<instance template="template-group-minus" id="lora-2" header="LoRA 2"></instance>
+		</div>
+		<div id="controls" collapsible class="group">
+			<h2>Controls<span>+<span></h2>
+			<instance template="template-group-minus" id="control-1" header="Control 1"></instance>
+			<instance template="template-group-minus" id="control-2" header="Control 2"></instance>
+		</div>
+		<instance template="template-group-standard" id="group-1" header="Group 1"></instance>
+		<instance template="template-group-standard" id="group-2" header="Group 2"></instance>
+		<instance template="template-main-button" name="Generate"></instance>
+	</div>
+	<div class="content">
+		<instance template="template-prompts"></instance>
+		<div class="result">
+			<h2>Simple Text to Image</h2>
+			<p>Lorem ipsum dolor sit amet.</p>
+		</div>
+	</div>
+	<div class="extra">
+		<instance template="template-group-actions"></instance>
+		<instance template="template-group-history"></instance>
+	</div>
+	<script type="module" src="../main.js">
+	</script>
+</body>
+</html>

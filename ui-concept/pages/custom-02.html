@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Draw Thing UI Proposal</title>
+	<link rel="stylesheet" href="../layout.css" />
+	<link rel="stylesheet" href="../theme.css" />
+</head>
+<body>
+	<instance template="template-menu"></instance>
+	<div class="options">
+		<h2>Custom 02<span>...</span></h2>
+		<instance template="template-group-standard" id="custom-2-1" header="Group 1"></instance>
+		<instance template="template-group-standard" id="custom-2-2" header="Group 2"></instance>
+		<instance template="template-group-standard" id="custom-2-3" header="Group 3"></instance>
+		<instance template="template-main-button" name="Execute"></instance>
+	</div>
+	<div class="content">
+		<instance template="template-prompts"></instance>
+		<div class="result">
+			<h2>Custom Mode</h2>
+			<p>Persistent input and maybe presets.</p>
+			<p>Separate history with custom parameters copying.</p>
+		</div>
+	</div>
+	<div class="extra">
+		<instance template="template-group-actions"></instance>
+		<instance template="template-group-history"></instance>
+	</div>
+	<script type="module" src="../main.js">
+	</script>
+</body>
+</html>

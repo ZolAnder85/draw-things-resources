@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Draw Thing UI Proposal</title>
+	<link rel="stylesheet" href="../layout.css" />
+	<link rel="stylesheet" href="../theme.css" />
+</head>
+<body>
+	<instance template="template-menu"></instance>
+	<div class="options">
+		<h2>Model Manager</h2>
+		<div id="base-model-group" collapsible class="group">
+			<h2>Base Models</h2>
+			<p><a>SDXL Base 1.0</a></p>
+			<p><a>RealVisXL 2.0</a></p>
+			<p><a>DreamShaper 8.0</a></p>
+		</div>
+		<div id="lora-model-group" collapsible class="group">
+			<h2>LoRAs</h2>
+			<p><a>Hyper SDXL LoRA</a></p>
+			<p><a>Hyper SD 1.5 LoRA</a></p>
+		</div>
+		<div id="control-model-group" collapsible class="group">
+			<h2>Controls</h2>
+			<p><a>SDXL Control LoRA Depth</a></p>
+			<p><a>SDXL Control LoRA Sketch</a></p>
+		</div>
+		<div class="uniform">
+			<button>import</button>
+			<button>merge</button>
+		</div>
+	</div>
+	<div class="manager">
+		<h2>RealVisXL 2.0</h2>
+		<div id="model-weights" collapsible class="group">
+			<h2>Weights</h2>
+			<instance template="template-input-simple" id="model-unet" value="realvisxl-2.0-unet.ckpt" label="unet path"></instance>
+			<instance template="template-input-simple" id="model-clip" value="realvisxl-2.0-clip.ckpt" label="clip path"></instance>
+			<instance template="template-input-simple" id="model-vae" value="realvisxl-2.0-vae.ckpt" label="vae path"></instance>
+		</div>
+		<instance template="template-group-standard" id="model-group-1" header="Group 1"></instance>
+		<instance template="template-group-standard" id="model-group-2" header="Group 2"></instance>
+		<div class="uniform">
+			<button>convert</button>
+			<button>export</button>
+			<button>delete</button>
+		</div>
+	</div>
+	<script type="module" src="../main.js">
+	</script>
+</body>
+</html>
