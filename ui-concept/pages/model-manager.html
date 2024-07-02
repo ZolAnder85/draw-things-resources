@@ -12,20 +12,35 @@
 	<div class="options">
 		<h2>Model Manager</h2>
 		<div id="base-model-group" collapsible class="group">
-			<h2>Base Models</h2>
-			<p><a>SDXL Base 1.0</a></p>
-			<p><a>RealVisXL 2.0</a></p>
-			<p><a>DreamShaper 8.0</a></p>
+			<h2>Base Models<span>+</span></h2>
+			<div id="base-sdxl-group" collapsible class="group">
+				<h2>Photoreal SDXL<span>-</span></h2>
+				<p>RealVisXL 2.0</p>
+				<p>NightVisionXL 7.7</p>
+			</div>
+			<div id="base-sd15-group" collapsible class="group">
+				<h2>General SD 1.5<span>-</span></h2>
+				<p>Realistic Vision 5.1<span>···</span></p>
+				<p class="selected">DreamShaper 8.0<span>···</span></p>
+			</div>
 		</div>
 		<div id="lora-model-group" collapsible class="group">
-			<h2>LoRAs</h2>
-			<p><a>Hyper SDXL LoRA</a></p>
-			<p><a>Hyper SD 1.5 LoRA</a></p>
+			<h2>LoRAs<span>+</span></h2>
+			<div id="lora-sdxl-group" collapsible class="group">
+				<h2>SDXL Accelerator<span>-</span></h2>
+				<p>TCD SDXL LoRA</p>
+				<p>Hyper SDXL LoRA</p>
+			</div>
+			<div id="lora-sd15-group" collapsible class="group">
+				<h2>SD 1.5 Accelerator<span>-</span></h2>
+				<p>TCD SD 1.5 LoRA</p>
+				<p>Hyper SD 1.5 LoRA</p>
+			</div>
 		</div>
 		<div id="control-model-group" collapsible class="group">
-			<h2>Controls</h2>
-			<p><a>SDXL Control LoRA Depth</a></p>
-			<p><a>SDXL Control LoRA Sketch</a></p>
+			<h2>Controls<span>+</span></h2>
+			<p>SDXL Control LoRA Depth</p>
+			<p>SDXL Control LoRA Sketch</p>
 		</div>
 		<div class="uniform">
 			<button>import</button>
@@ -33,12 +48,20 @@
 		</div>
 	</div>
 	<div class="manager">
-		<h2>RealVisXL 2.0</h2>
-		<div id="model-weights" collapsible class="group">
-			<h2>Weights</h2>
-			<instance template="template-input-simple" id="model-unet" value="realvisxl-2.0-unet.ckpt" label="unet path"></instance>
-			<instance template="template-input-simple" id="model-clip" value="realvisxl-2.0-clip.ckpt" label="clip path"></instance>
-			<instance template="template-input-simple" id="model-vae" value="realvisxl-2.0-vae.ckpt" label="vae path"></instance>
+		<p class="notes">
+			Models could be categorized for easier selection.
+			The selected model (blue in the list) is edited on the right side.
+			Related weights are individually selectable and movable within subfolders of the models folder.
+			When importing, the subfolder and category should be selectable.
+		</p>
+		<h2>DreamShaper 8.0</h2>
+		<div id="model-group-general" collapsible class="group">
+			<h2>General</h2>
+			<instance template="template-input-name" id="model-category" value="General SD 1.5" label="model category"></instance>
+			<instance template="template-input-name" id="model-name" value="DreamShaper 8.0" label="model name"></instance>
+			<instance template="template-input-path" id="model-unet" value="base/sd-1.5/dreamshaper-8.0-unet.ckpt" label="unet path"></instance>
+			<instance template="template-input-path" id="model-clip" value="base/sd-1.5/dreamshaper-8.0-clip.ckpt" label="clip path"></instance>
+			<instance template="template-input-path" id="model-vae" value="base/sd-1.5/dreamshaper-8.0-vae.ckpt" label="vae path"></instance>
 		</div>
 		<instance template="template-group-standard" id="model-group-1" header="Group 1"></instance>
 		<instance template="template-group-standard" id="model-group-2" header="Group 2"></instance>

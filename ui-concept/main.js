@@ -51,3 +51,21 @@ for (const row of rows) {
 		slider.value = numeric.value;
 	});
 }
+
+const storageKey = "notes-disabled";
+const storedState = localStorage.getItem(storageKey);
+if (storedState == "true") {
+	document.body.classList.add("no-notes");
+} else if (storedState == "false") {
+	document.body.classList.remove("no-notes");
+}
+document.getElementById("toggle-notes").addEventListener("click", event => {
+	if (document.body.classList.contains("no-notes")) {
+		document.body.classList.remove("no-notes");
+		localStorage.setItem(storageKey, "false")
+	} else {
+		document.body.classList.add("no-notes");
+		localStorage.setItem(storageKey, "true")
+	}
+	event.stopPropagation();
+});

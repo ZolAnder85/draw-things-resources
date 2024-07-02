@@ -1,30 +1,72 @@
 <template id="template-menu">
 	<div class="menu">
-		<h2>Menu</h2>
+		<p><a id="toggle-notes" style="font-weight: bold; color: rgb(250, 190, 130)">toggle-notes</a></p>
+		<p class="notes">
+			These are the pages or workflows.
+			Custom workflows are toggled in the scripts manager.
+		</p>
 		<p><a href="index.html">Simple</a></p>
 		<p><a href="regional.html">Regional</a></p>
 		<p><a href="canvas.html">Canvas</a></p>
-		<p><a href="custom-01.html">Custom-01</a></p>
-		<p><a href="custom-02.html">Custom-02</a></p>
+		<p><a href="custom-01.html">Custom 01</a></p>
+		<p><a href="custom-02.html">Custom 02</a></p>
+		<p><a>More ...</a></p>
+		<br />
 		<p><a href="model-manager.html">Model Manager</a></p>
-		<p><a>Preset Manager</a></p>
-		<p><a>Script Manager</a></p>
+		<p><a href="preset-manager.html">Preset Manager</a></p>
+		<p><a href="script-manager.html">Script Manager</a></p>
 		<p><a>Project Manager</a></p>
+		<div class="spacer">
+		</div>
+		<p><a>Console</a></p>
+		<p><a>Settings</a></p>
 	</div>
 </template>
 
 <template id="template-input-simple">
-	<div class="row" combined>
+	<div class="row">
 		<label for="{id}">{label}</label>
-		<input id="{id}" value="{value}"/>
+		<input id="{id}" value="{value}" />
+	</div>
+</template>
+
+<template id="template-input-name">
+	<div class="row">
+		<label for="{id}" style="width: 150px">{label}</label>
+		<input id="{id}" value="{value}" />
+	</div>
+</template>
+
+<template id="template-input-path">
+	<div class="row">
+		<label for="{id}" style="width: 150px">{label}</label>
+		<input id="{id}" value="{value}" />
+		<button style="width: 100px">select</button>
+		<button style="width: 100px">move</button>
 	</div>
 </template>
 
 <template id="template-input-combined">
 	<div class="row" combined>
 		<label for="{id}">{label}</label>
-		<input id="{id}" type="range" value="{value}"/>
+		<input id="{id}" type="range" value="{value}" />
 		<input type="number" value="{value}" />
+	</div>
+</template>
+
+<template id="template-input-checked">
+	<div class="checked">
+		<input type="checkbox" checked />
+		<label for="{id}" style="width: 150px">{label}</label>
+		<input id="{id}" style="flex-grow: 1" value="{value}" />
+	</div>
+</template>
+
+<template id="template-input-disabled">
+	<div class="disabled">
+		<input type="checkbox" />
+		<label for="{id}" style="width: 150px">{label}</label>
+		<input id="{id}" style="flex-grow: 1" value="{value}" disabled />
 	</div>
 </template>
 
@@ -67,9 +109,17 @@
 	</div>
 </template>
 
+<template id="template-main-pair">
+	<div class="spacer">
+	</div>
+	<div class="uniform">
+		<button class="main">{one}</button>
+		<button class="main">{two}</button>
+	</div>
+</template>
+
 <template id="template-prompts">
 	<div class="prompts">
-		<h2>Prompts</h2>
 		<div class="pair">
 			<textarea>photo of an astronaut riding a horse on Mars</textarea>
 			<textarea>low quality</textarea>
@@ -78,18 +128,24 @@
 </template>
 
 <template id="template-group-actions">
+	<p class="notes">
+		These are the scripts supported right now.
+		Please make the last user inputs persistent.
+		Custom actions are toggled in the scripts manager.
+	</div>
 	<div id="actions" collapsible class="group">
 		<h2>Actions</h2>
-		<p><a>custom 1</a></p>
-		<p><a>custom 2</a></p>
-		<p><a>custom 3</a></p>
+		<p><a>Custom 1</a></p>
+		<p><a>Custom 2</a></p>
+		<p><a>Custom 3</a></p>
+		<p><a>More ...</a></p>
 	</div>
 </template>
 
 <template id="template-history-item">
 	<div>
 		<span title="copy prompt">
-			<svg width="22" viewBox="0 0 1000 1000" style="fill: rgb(200, 200, 200)">
+			<svg width="18" viewBox="0 0 1000 1000" style="fill: rgb(200, 200, 200)">
 				<path d="M978.9,326.6L673.5,21.2c-14.9-14.9-38.9-14.9-53.8,0l-113.1,113L83.3,557.6l-0.2,0.1v0.2L75,566c-5.8,5.7-9.5,13.1-10.7,21.2L10.4,946.3c-1.8,11.9,2.2,23.9,10.7,32.5c7.3,7.1,16.9,11.1,26.9,11.1c1.9,0,3.7-0.2,5.6-0.5l359.2-53.7c8-1.3,15.6-5,21.2-10.8l431.7-431.7l113-113.1C993.7,365.5,993.7,341.4,978.9,326.6z M415.5,836.1l-50.4-50.4l369.6-369.6l50.4,50.4L415.5,836.1z M109.5,798.6l20.9-140l211,211l-140,20.9L109.5,798.6z M681,362.3L311.4,731.9l-43.2-43.2l369.6-369.6l21.5,21.6L681,362.3z M533.5,214.9l50.5,50.4L214.4,635l-50.5-50.4L533.5,214.9z M838.9,412.7l-77.3-77.2v-0.1h-0.2L713.1,287L587.3,161.1l59.3-59.3l251.6,251.6L838.9,412.7z">
 				</path>
 			</svg>
@@ -98,13 +154,13 @@
 			{dice}
 		</span>
 		<span title="copy parameters">
-			<svg width="20" viewBox="0 0 1000 1000" style="fill: rgb(180, 180, 180)">
+			<svg width="18" viewBox="0 0 1000 1000" style="fill: rgb(180, 180, 180)">
 				<path d="M987.5,632.9c1.4,8.4,1.1,18.6-1.1,30.5c-2.1,11.9-5.6,24-10.5,36.3C971,711.9,965,723,958,732.8c-7,9.8-14.7,16.8-23.1,21c-8.4,4.2-15.8,6.3-22.1,6.3s-13.3-1.4-21-4.2c-7-2.1-15.8-4-26.3-5.8c-10.5-1.8-21.2-2.1-32.1-1.1c-10.9,1.1-21.7,3.3-32.6,6.8c-10.9,3.5-20.1,9.5-27.9,17.9c-16.8,17.5-26.6,37.5-29.4,59.9c-2.8,22.4,0.4,43.8,9.5,64.1c7,14,6,28-3.2,42c-4.2,5.6-10.9,11.4-20,17.3c-9.1,6-19.1,11.4-30,16.3c-10.9,4.9-22.2,8.8-34.2,11.6c-11.9,2.8-22.4,4.2-31.5,4.2c-6.3,0-12.3-2.5-17.9-7.4c-5.6-4.9-9.5-10.2-11.6-15.8h-1.1c-7.7-21.7-20.8-40.5-39.4-56.2c-18.6-15.8-40.1-23.6-64.6-23.6c-23.8,0-45.4,7.9-64.6,23.6c-19.3,15.8-32.8,34.2-40.5,55.2c-3.5,8.4-8.8,14.5-15.8,18.4c-7,3.9-14.7,5.8-23.1,5.8c-9.8,0-20.8-1.8-33.1-5.3c-12.3-3.5-24.5-7.9-36.8-13.1c-12.3-5.3-23.3-11.4-33.1-18.4c-9.8-7-17.2-14-22.1-21c-3.5-4.9-5.4-10.7-5.8-17.3c-0.4-6.7,2.3-15.9,7.9-27.9c7.7-16.1,10.7-34.5,8.9-55.2c-1.7-20.7-10.7-39.8-26.8-57.3c-9.8-10.5-21.7-17.3-35.7-20.5c-14-3.2-27.3-4.4-39.9-3.7c-14.7,0.7-29.8,3.5-45.2,8.4c-9.8,2.8-19.6,2.1-29.4-2.1c-7.7-2.8-14.9-9.3-21.5-19.4c-6.7-10.2-12.6-21.4-17.9-33.6C20,690.6,16,678,13.1,665c-2.8-13-3.5-23.6-2.1-32.1c2.1-15.4,9.1-25.2,21-29.4c21-8.4,39.9-22.2,56.8-41.5c16.8-19.3,25.2-40.8,25.2-64.6c0-24.5-8.4-45.9-25.2-64.1C72,415,53.1,401.7,32.1,393.3c-6.3-2.1-11.6-7.2-15.8-15.2c-4.2-8.1-6.3-16.3-6.3-24.7c0-9.1,1.4-19.3,4.2-30.5c2.8-11.2,6.5-22.1,11-32.6c4.6-10.5,9.8-20.1,15.8-28.9c6-8.8,12.4-15.2,19.4-19.4c5.6-3.5,11-4.9,16.3-4.2c5.3,0.7,11,2.1,17.3,4.2c21,8.4,42.9,11,65.7,7.9c22.8-3.2,42.9-13.1,60.4-30c8.4-8.4,14.5-18.7,18.4-31c3.9-12.3,6.3-24.4,7.4-36.3c1-11.9,1-22.8,0-32.6c-1.1-9.8-1.9-16.8-2.6-21c-1.4-4.2-2.6-9.1-3.7-14.7c-1.1-5.6-0.5-10.5,1.6-14.7c4.2-9.8,11.7-18.4,22.6-25.8c10.9-7.4,22.6-13.5,35.2-18.4c12.6-4.9,24.9-8.6,36.8-11c11.9-2.5,21.4-3.7,28.4-3.7c9.1,0,16.3,3,21.5,8.9c5.3,6,8.9,12.1,11,18.4c7.7,18.9,20.3,35.6,37.8,49.9c17.5,14.4,38.2,21.5,62,21.5c24.5,0,46.3-6.8,65.2-20.5c18.9-13.7,32.2-31,39.9-52c2.8-5.6,7.2-11.4,13.1-17.3c6-6,12.1-8.9,18.4-8.9c9.8,0,20.5,1.4,32.1,4.2c11.6,2.8,22.9,6.7,34.2,11.6c11.2,4.9,21.5,11.2,31,18.9c9.5,7.7,17,16.1,22.6,25.2c3.5,5.6,4.6,11.7,3.2,18.4c-1.4,6.7-2.8,11.4-4.2,14.2c-9.1,20.3-11.9,41.7-8.4,64.1c3.5,22.4,13.7,42,30.5,58.9c16.8,16.8,37.5,26.1,62,27.8c24.5,1.8,47.3-2.3,68.3-12.1c5.6-3.5,12.4-4.9,20.5-4.2c8.1,0.7,14.9,3.9,20.5,9.5c10.5,9.8,19.8,24.7,27.9,44.7c8.1,20,13.5,40.1,16.3,60.4c1.4,11.9-0.5,21.2-5.8,27.9c-5.3,6.7-10.7,11-16.3,13.1c-21.7,7.7-40.3,21.2-55.7,40.5c-15.4,19.3-23.1,41.2-23.1,65.7c0,23.8,6.5,44.7,19.4,62.5c13,17.9,29.9,30.7,51,38.4c4.9,2.8,9.1,5.6,12.6,8.4C979.4,615.1,984.6,623.1,987.5,632.9L987.5,632.9z M498.7,727.5c31.5,0,61.3-6,89.3-17.9s52.4-28.4,73-49.4c20.7-21,37-45.4,48.9-73c11.9-27.7,17.9-57.3,17.9-88.8c0-31.5-6-61.1-17.9-88.8c-11.9-27.7-28.2-51.9-48.9-72.5c-20.7-20.7-45-37-73-48.9c-28-11.9-57.8-17.9-89.3-17.9c-31.5,0-61.1,6-88.8,17.9c-27.7,11.9-51.8,28.2-72.5,48.9c-20.7,20.7-37,44.8-48.9,72.5c-11.9,27.7-17.9,57.3-17.9,88.8c0,31.5,6,61.1,17.9,88.8c11.9,27.7,28.2,52,48.9,73c20.7,21,44.8,37.5,72.5,49.4C437.6,721.6,467.2,727.5,498.7,727.5L498.7,727.5z">
 				</path>
 			</svg>
 		</span>
 		<span title="remove generation">
-			<svg width="20" viewBox="0 0 1000 1000" style="fill: rgb(200, 100, 100)">
+			<svg width="18" viewBox="0 0 1000 1000" style="fill: rgb(200, 100, 100)">
 				<path d="M843.9,80.3H636.7V10H361.1v70.3H153.9v69.3h690.1L843.9,80.3z"></path><path d="M845.7,203.6H85.5v101.8h69V990h691.1V305.4h68.8V203.6H845.7L845.7,203.6z M353.4,890.8h-93.2V304.4h93.2V890.8z M546.3,890.8h-93.2V304.4h93.2V890.8z M742.5,890.8h-93.2V304.4h93.2V890.8z">
 			</svg>
 		</span>
@@ -112,6 +168,21 @@
 </template>
 
 <template id="template-group-history">
+	<p class="notes">
+		Buttons on history items:
+	</p>
+	<ul class="notes">
+		<li>Copy Prompt</li>
+		<li>Copy Seed</li>
+		<li>Copy Params</li>
+		<li>Remove Item</li>
+	</ul>
+	<p class="notes">
+		Clicking the image would only preview it.
+		Command clicking would select it for batch export or batch delete.
+		Right-click menu items for sending it to the layers.
+		Or something similar for better usability.
+	</p>
 	<div id="history" collapsible class="history">
 		<h2>History</h2>
 		<instance template="template-history-item" dice="⚃"></instance>

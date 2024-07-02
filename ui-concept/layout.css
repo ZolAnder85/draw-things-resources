@@ -25,6 +25,15 @@
 	cursor: default;
 }
 
+ul {
+	padding-left: 20px;
+	list-style-type: square;
+}
+
+li {
+	overflow: visible;
+}
+
 html,
 body {
 	width: 100%;
@@ -106,6 +115,8 @@ body {
 }
 
 .row,
+.checked,
+.disabled,
 .uniform {
 	display: flex;
 	flex-direction: row;
@@ -147,8 +158,15 @@ h2 span {
 	flex-shrink: 1;
 }
 
+.checked > :nth-last-child(1),
+.disabled > :nth-last-child(1) {
+	flex-grow: 1;
+	flex-shrink: 1;
+}
+
 .uniform > * {
 	flex-grow: 1;
+	flex-shrink: 1;
 }
 
 label,

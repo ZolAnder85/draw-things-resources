@@ -10,6 +10,9 @@
 <body>
 	<instance template="template-menu"></instance>
 	<div class="options">
+		<p class="notes">
+			Regional prompting sections included.
+		</p>
 		<h2>Parameters<span>...</span></h2>
 		<instance template="template-group-standard" id="model" header="Model"></instance>
 		<div id="loras" collapsible class="group">
@@ -29,13 +32,14 @@
 		</div>
 		<instance template="template-group-standard" id="group-1" header="Group 1"></instance>
 		<instance template="template-group-standard" id="group-2" header="Group 2"></instance>
-		<instance template="template-main-button" name="Generate"></instance>
+		<instance template="template-main-pair" one="Add to queue" two="Cancel queue"></instance>
 	</div>
 	<div class="content">
 		<instance template="template-prompts"></instance>
 		<div class="result">
-			<h2>Regional Prompting</h2>
-			<p>Lorem ipsum dolor sit amet.</p>
+			<p class="notes">
+				This is the simpler canvas extended with the option to mark regions for regional prompting.
+			</p>
 		</div>
 	</div>
 	<div class="extra">

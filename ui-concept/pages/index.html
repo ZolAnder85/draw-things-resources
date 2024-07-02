@@ -10,6 +10,10 @@
 <body>
 	<instance template="template-menu"></instance>
 	<div class="options">
+		<p class="notes">
+			Collapsible groups of parameters.
+			Please have an option to disable auto-changing of parameters when switching models.
+		</p>
 		<h2>Parameters<span>...</span></h2>
 		<instance template="template-group-standard" id="model" header="Model"></instance>
 		<div id="loras" collapsible class="group">
@@ -24,13 +28,16 @@
 		</div>
 		<instance template="template-group-standard" id="group-1" header="Group 1"></instance>
 		<instance template="template-group-standard" id="group-2" header="Group 2"></instance>
-		<instance template="template-main-button" name="Generate"></instance>
+		<instance template="template-main-pair" one="Add to queue" two="Cancel queue"></instance>
 	</div>
 	<div class="content">
 		<instance template="template-prompts"></instance>
 		<div class="result">
-			<h2>Simple Text to Image</h2>
-			<p>Lorem ipsum dolor sit amet.</p>
+			<p class="notes">
+				This is the simpler canvas.
+				Layers have one image and are scaled to cover the area when generating (except the moodboard for example).
+				So this is for generations not doing zoomed inpainting or outpainting.
+			</p>
 		</div>
 	</div>
 	<div class="extra">

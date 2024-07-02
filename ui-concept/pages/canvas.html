@@ -10,6 +10,9 @@
 <body>
 	<instance template="template-menu"></instance>
 	<div class="options">
+		<p class="notes">
+			Regional prompting here too.
+		</p>
 		<h2>Parameters<span>...</span></h2>
 		<instance template="template-group-standard" id="model" header="Model"></instance>
 		<div id="loras" collapsible class="group">
@@ -34,8 +37,24 @@
 	<div class="content">
 		<instance template="template-prompts"></instance>
 		<div class="result">
-			<h2>All Canvas Features</h2>
-			<p>Lorem ipsum dolor sit amet.</p>
+			<p class="notes">
+				Here would live the canvas mostly as is now.
+				Marking regions would also be included.
+				I would however improve some of the canvas functionality.
+				Scrolling would zoom the view of the canvas for more precise tooling.
+				Zooming the cavas would be replaced by dragging the corners of the generation area instead.
+			</p>
+			<p class="notes">
+				Maybe separate history stacks should be used for the modes.
+				I would also suggest these features:
+				Adding and removing separator line to history view.
+				Reordering history items.
+			</p>
+			<ul class="notes">
+				<li>Adding and removing separator line to history</li>
+				<li>Reordering history items</li>
+				<li>Rating history items (or at least favoriting)</li>
+			</ul>
 		</div>
 	</div>
 	<div class="extra">

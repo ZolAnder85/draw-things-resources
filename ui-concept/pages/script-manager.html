@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Draw Thing UI Proposal</title>
+	<link rel="stylesheet" href="../layout.css" />
+	<link rel="stylesheet" href="../theme.css" />
+</head>
+<body>
+	<instance template="template-menu"></instance>
+	<div class="options">
+		<h2>Script Manager</h2>
+		<div id="action-script-group" collapsible class="group">
+			<h2>Action Scripts<span>+</span></h2>
+			<div id="action-category-1" collapsible class="group">
+				<h2>Action Category 1<span>-</span></h2>
+				<p>Custom 1</p>
+				<p>Custom 2</p>
+				<p>Custom 3</p>
+			</div>
+		</div>
+		<div id="workflow-script-group" collapsible class="group">
+			<h2>Workflow Scripts<span>+</span></h2>
+			<div id="workflow-category-1" collapsible class="group">
+				<h2>Workflow Category 1<span>-</span></h2>
+				<p>Custom 01<span>···</span></p>
+				<p>Custom 02<span>···</span></p>
+				<p class="selected">Custom 03<span>···</span></p>
+			</div>
+		</div>
+		<div class="uniform">
+			<button>new</button>
+			<button>import</button>
+		</div>
+	</div>
+	<div class="manager">
+		<h2>Custom 03</h2>
+		<div id="preset-group-general" collapsible class="group">
+			<h2>General</h2>
+			<instance template="template-input-name" id="script-category" value="Workflow Category 1" label="script category"></instance>
+			<instance template="template-input-name" id="script-name" value="Custom 03" label="script name"></instance>
+			<instance template="template-input-path" id="script-source-path" value="workflow/category-1/custom-03.js" label="script source"></instance>
+			<instance template="template-input-path" id="script-ui-path" value="workflow/category-1/custom-03.json" label="UI description"></instance>
+		</div>
+		<div class="uniform">
+			<button>open source</button>
+			<button>open descriptor</button>
+			<button>delete</button>
+		</div>
+		<p class="notes">
+			Workflow scripts would use a JSON for initializing their UI.
+			They should support something like LocalStorage in browser environments.
+			I would also extend the JS API to something like this:
+		</p>
+		<pre class="notes" style="white-space: pre">
+// pipeline.loadTextEncoder(TEName);
+// pipeline.loadClipEncoder(CEName);
+// pipeline.loadUNet(UNetName);
+// pipeline.loadVAE(VAEName);
+pipeline.loadModel(ModelName);
+
+let latent = pipeline.allocateLatent(768, 512);
+// pipeline.initLatentNoise(latent, noiseParameters);
+// canvas.setSize(768, 512);
+// canvas.loadImage(imagePath, layerName);
+// canvas.encodeLayer(latent, layerName);
+pipeline.encodeImage(latent, imagePath);
+pipeline.addLatentNoise(latent, noiseParameters);
+
+pipeline.run(latent, timeStepFrom, timeStepTo, steps, sampler, scheduler);
+// pipeline.run(latent, timeStepArray, sampler);
+pipeline.upscaleLatent(latent, 1152, 768);
+// const sample = sampleLatent(latent, coordinates);
+// transformLatent(latent, matrix);
+// transformLatent(latent, COEFFS, CONSTS);
+pipeline.run(latent, timeStepFrom, timeStepTo, steps, sampler, scheduler);
+
+pipeline.decodeImage(latent, imagePath);
+// canvas.decodeLatent(latent, layerName);
+		</pre>
+	</div>
+	<script type="module" src="../main.js">
+	</script>
+</body>
+</html>

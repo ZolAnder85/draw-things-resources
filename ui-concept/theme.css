@@ -112,10 +112,41 @@ body,
 }
 
 .history > div {
-	font-size: 27pt;
+	font-size: 25px;
+	line-height: 30px;
+	white-space: normal;
 	color: rgb(180, 180, 180);
 	background: rgb(30, 70, 50);
 	border-radius: 5px;
+}
+
+.notes {
+	font-size: 11pt;
+	line-height: 13pt;
+	color: rgb(200, 150, 100);
+	white-space: normal;
+	flex-shrink: 0;
+}
+
+.no-notes .notes {
+	display: none;
+}
+
+.selected {
+	font-weight: bold;
+	color: rgb(200, 200, 200);
+	background: rgb(50, 70, 90);
+	border-radius: 1px;
+	box-shadow: 0 0 0 5px rgb(50, 70, 90);
+}
+
+p > span {
+	float: right;
+}
+
+.disabled > label,
+.disabled > input:nth-last-child(1) {
+	opacity: 0.5;
 }
 
 /* common shapes and colors */
@@ -262,6 +293,7 @@ textarea {
 	padding-bottom: 3px;
 	font-size: 10pt;
 	line-height: 20px;
+	white-space: pre-wrap;
 	resize: none;
 }
 

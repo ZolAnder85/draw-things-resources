@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+	<title>Draw Thing UI Proposal</title>
+	<link rel="stylesheet" href="../layout.css" />
+	<link rel="stylesheet" href="../theme.css" />
+</head>
+<body>
+	<instance template="template-menu"></instance>
+	<div class="options">
+		<h2>Preset Manager</h2>
+		<div id="base-preset-group" collapsible class="group">
+			<h2>Standard Presets<span>+</span></h2>
+			<div id="preset-resolution-group" collapsible class="group">
+				<h2>Resolutions<span>-</span></h2>
+				<p>UHD Landscape with HiResFix<span>···</span></p>
+				<p class="selected">UHD Portrait with HiResFix<span>···</span></p>
+			</div>
+			<div id="preset-model-group" collapsible class="group">
+				<h2>Model Presets<span>-</span></h2>
+				<p>SDXL Finetune with Hyper</p>
+				<p>SDXL Finetune with TCD</p>
+			</div>
+		</div>
+		<div id="custom-01-preset-group" collapsible class="group">
+			<h2>Presets for Custom 01<span>+</span></h2>
+			<p>Preset 01 A</p>
+			<p>Preset 01 B</p>
+		</div>
+		<div id="custom-02-preset-group" collapsible class="group">
+			<h2>Presets for Custom 02<span>+</span></h2>
+			<p>Preset 01 A</p>
+			<p>Preset 01 B</p>
+		</div>
+		<div class="uniform">
+			<button>new empty</button>
+			<button>from clipboard</button>
+			<button>from image</button>
+		</div>
+	</div>
+	<div class="manager">
+		<p class="notes">
+			All parameters are presented in this view (mirrored from the generation view).
+			Unchecked parameters are not overridden when activating a preset.
+			Those key-value pairs are simply not present in the preset.
+		</p>
+		<h2>UHD Portrait with HiResFix</h2>
+		<div id="preset-group-general" collapsible class="group">
+			<h2>General</h2>
+			<instance template="template-input-name" id="preset-category" value="Resolutions" label="preset category"></instance>
+			<instance template="template-input-name" id="preset-name" value="UHD Portrait with HiResFix" label="preset name"></instance>
+		</div>
+
+		<div id="preset-group-1" collapsible class="group">
+			<h2>Group 1</h2>
+			<instance template="template-input-checked" id="preset-param-1" value="10" label="param 1"></instance>
+			<instance template="template-input-checked" id="preset-param-2" value="20" label="param 2"></instance>
+			<instance template="template-input-disabled" id="preset-param-3" value="disabled" label="param 3"></instance>
+		</div>
+
+		<div id="preset-group-2" collapsible class="group">
+			<h2>Group 2</h2>
+			<instance template="template-input-checked" id="preset-param-1" value="10" label="param 1"></instance>
+			<instance template="template-input-checked" id="preset-param-2" value="20" label="param 2"></instance>
+			<instance template="template-input-disabled" id="preset-param-3" value="disabled" label="param 3"></instance>
+		</div>
+		<div class="uniform">
+			<button>copy</button>
+			<button>paste</button>
+			<button>delete</button>
+		</div>
+	</div>
+	<script type="module" src="../main.js">
+	</script>
+</body>
+</html>
